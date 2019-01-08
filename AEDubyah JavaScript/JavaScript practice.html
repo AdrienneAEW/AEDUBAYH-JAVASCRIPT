@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="AEW" />
+<meta name="description" content="JavaScript Practice" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="Global JavaScript.css" />
+<link rel="icon" href="https://aedubyahinorder.com/wp-content/uploads/2017/10/SamplesLogo.png" type="image/gif" sizes="16x16">
+
+<title>Practicing JavaScript</title>
+</head>
+<body>
+
+<h1>DOM</h1>
+<p class="paragraph-h1">Document Object Modal</p>
+
+<!--Methods-->
+<h2>Methods</h2>
+<h3>By Class Name</h3>
+<p class="paragraph-h3">Returns a DOM Collection of all "paragraph-h3" in document.</p>
+<button onclick="Para3()" class="btn-h3">List Paragraph-H3s</button>
+<p id="demo26" class="paragraph-h3"></p>
+
+<h3>Number of Elements By Class Name</h3>
+<button onclick="Para3a()" class="btn-h3">Number of paragraph-h3s</button>
+<p id="demo27" class="paragraph-h3"></p>
+
+<h3>Style Elements By Class Name</h3>
+<p class="paragraph-h3 para-demo-27">Color me not.</p>
+<p class="paragraph-h3 para-demo-27">Color me pink.</p>
+<p class="paragraph-h3 para-demo-27">Color me green.</p>
+<p class="paragraph-h3 para-demo-27">Color me not.</p>
+<p class="paragraph-h3 para-demo-27">Color me not.</p>
+
+<button onclick="Para3b()" class="btn-h3">Add Background Color</button>
+
+<!-- Statements -->
+<h2>Statements</h2>
+<h3>Declaring</h3>
+<p id="demo11" class="paragraph-h3"></p>
+<p id="demo12" class="paragraph-h3"></p>
+<p id="demo13" class="paragraph-h3"></p>
+
+<!-- Data Types -->
+<h2>Data Types</h2>
+<h3>Booleans - True or False</h3>
+<p class="paragraph-h3">Do these numbers match? - <span id="demo14"></span></p>
+<p class="paragraph-h3">Do these numbers match? - <span id="demo15"></span></p>
+
+<h3>Arrays - Choosing From a List</h3>
+<p id="demo16" class="paragraph-h3"></p>
+<p id="demo17" class="paragraph-h3"></p>
+<p id="demo18" class="paragraph-h3"></p>
+
+<!-- Strings -->
+<h2>Strings</h2><!-- Overite Document / For Testing Only -->
+<h3>Document Overwrite</h3>
+<p class="paragraph-h3">This is a string my love! <b><u>Use <em>only</em> for <em>testing</em></u>.</b>  It <b><em>over-writes</em> a document</b>.</p>
+<button type="button" onclick="document.write('Hey Girl!')" class="btn-h3" style="padding: 5px 8px; margin-top: 15px; margin-bottom: 15px;">See Message</button>
+
+<h3>Hidden Text String</h3>
+<button type="button" onclick="myFunction()" class="btn-h3" style="padding: 5px 8px; margin-top: 15px; margin-bottom: 15px;">I Want</button>
+<p id="demo2" class="paragraph-h3"></p>
+<p id="demo3" class="paragraph-h3"></p>
+
+
+<h3>A String, Again</h3>
+<p id="demo1" class="paragraph-h3"></p>
+<p id="demo4" class="paragraph-h3"></p>
+
+
+<!-- Object -->
+<h2>Object</h2>
+<p class="paragraph-h2">I'm an Object baby!</p>
+<p id="demo5" class="paragraph-h2"></p>
+
+<!-- Change the sentence. -->
+<h2>Change HTML Content</h2>
+<h3>Change Text </h3>
+<p id="demo" class="paragraph-h3">My First Paragraph.</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "My First HTML JavaScript."' class="btn-h3" style="padding: 5px 8px;">New Sentence</button>
+
+<h3>Change An Attribute</h3>
+	<h4 class="paragraph-h4">Unsplash Image Change</h4>
+	<img src="https://picsum.photos/150/250?image=1074" id="demo8" class="paragraph-h3" />
+
+	<p id="demo8a-caption" class="paragraph-h4 demo-caption">Photo by: 
+	Samuel Scrimshaw - Find it &#64; <a href="https://unsplash.com/photos/sseiVD2XsOk" target="_blank" title="I'm an Unsplash photo.">Unsplash</a></p>
+	<p id="demo8b-caption" class="paragraph-h4 demo-caption">Photo by: 
+	Joanna Kosinska - Find it &#64; <a href="https://unsplash.com/photos/B6yDtYs2IgY" target="_blank" title="I'm an Unsplash photo.">Unsplash</a></p>
+
+<h4 class="paragraph-h4">Unsplash Image Toggle</h4>
+	<button type="button" onclick="picToogle()" class="btn-h4" style="padding: 5px 8px; margin-top: 15px; margin-bottom: 15px;">Toggle Pic</button>
+	
+	<div id="demo9a-caption">
+		<img src="https://picsum.photos/400/300?image=1074" id="demo9a" class="paragraph-h4" />
+		<p class="paragraph-h4 demo-caption">Photo by: 
+		Samuel Scrimshaw - Find it &#64; <a href="https://unsplash.com/photos/sseiVD2XsOk" target="_blank" title="I'm an Unsplash photo.">Unsplash</a></p>
+	</div>
+
+	<div id="demo9b-caption" style="display: none;">
+		<img src="https://picsum.photos/400/300?image=998" id="demo9" class="paragraph-h4" />
+		<p  class="paragraph-h4 demo-caption">Photo by: 
+		Joanna Kosinska - Find it &#64; <a href="https://unsplash.com/photos/B6yDtYs2IgY" target="_blank" title="I'm an Unsplash photo.">Unsplash</a></p>
+	</div>
+
+	<h4 class="paragraph-h4">Change Background Color</h4>
+		<div id="demo19" class="background-change paragraph-h4">
+		<p class="paragraph-h4">Toggle the Background Color</p>
+		<button type="button" id="color-toggle" onclick="bgToogle()">New Background</button>
+		</div>
+		
+	<h4 class="paragraph-h4">Mouseover/out Text to Transition, Color and Text Change</h4>
+		<div id="demo20" class="background-mouse paragraph-h4">
+		<p>Mouseover the Words Below to Toggle the Background Color</p>
+		<p id="demo21" class="mouse-words">2 Color Suggestions</p>
+		</div>		
+		
+		
+<h2>Event Listeners</h2>
+	<h3 class="paragraph-h3">Change Background Image</h4>
+		<div id="demo22" class="image-change paragraph-h3">
+		<p class="paragraph-h3">First time using an event listener.  So much fun. Thank you Jesus!</p>
+		<button type="button" id="image-toggle" onclick="imageToogle()">New Image</button>
+		</div>
+
+	
+<!-- Animation -->
+<h1>Animation</h1>
+<h2>Animationing An Element</h2>
+<button onclick="sqAnimate()" class="paragraph-h2">Click - I Animate</button>
+<div class="animate paragraph-h2">
+<div id="demo10"></div>
+</div>
+
+<!-- Dates -->
+<h1>Working with Dates</h1>
+<h2>Dates</h2>
+<p class="paragraph-h2">This is how you do a date my dear.</p>
+
+<h3>AEDubyah Global Date</h3>
+<p class="paragraph-h3">Global AEDubyah Date format...I think.</p>
+<p id="demo6" class="paragraph-h3"></p>
+
+<h3>Month</h3>
+<button type="button" onclick="myFunction1()" class="btn-h3" style="padding: 5px 8px; margin-top: 15px; margin-bottom: 15px;">See Month</button>
+<p id="demo7" class="paragraph-h3"></p>
+
+<h3>Year</h3>
+<button type="button" onclick="dateYear()" class="btn-h3" style="padding: 5px 8px; margin-top: 15px; margin-bottom: 15px;">See Year</button>
+<p id="demo23" class="paragraph-h3"></p>
+
+<h3>Document Updated</h3>
+<span class="paragraph-h3">Document was updated on:</span> &nbsp;<span id="demo24"></span>
+
+<span class="paragraph-h3">Update date in full:</span> &nbsp;<span id="demo25"></span>
+
+
+<!-- Form Practice -->
+<h1>Working With Forms</h1>
+<h2>Inputs</h2>
+<h3>Reset</h3>
+<p class="paragraph-h3">I'm A Form with reset.</p>
+<form name="myForm" class="form-h3" action="/action_page.php" method="post" method="post" onreset="clearForm" onsubmit="return validateForm()">
+Name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+<input type="reset" title="Pressing this button resets the entire form.">
+</form>
+
+
+
+
+<script src="Global JavaScript.js"></script>
+</body>
+</html> 
