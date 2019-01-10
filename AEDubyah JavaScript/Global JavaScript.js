@@ -1,4 +1,5 @@
 //JavaScript Practice
+
 //Methods
 function Para3() {
 	var para = document.getElementsByClassName("paragraph-h3");
@@ -62,6 +63,15 @@ var quilts = ["King", "Queen", "Full", "Twin", "Baby"];
 	
 var virtual1 = ["White Glove", "Grande", "Cut Above", "Essential"];
 	document.getElementById("demo18").innerHTML = "Lowest selling service: "+ virtual1[3];
+
+//Loops
+var services = ["Custom", "Secreterial", "Webnology", "Presentatins", "Excel Formulas"];
+var text = "";
+var loopI;
+for (loopI = 0; loopI < services.length; loopI++) {
+  text += services[loopI] + "<br>";
+}
+document.getElementById("demo28").innerHTML = text;
 	
 	
 //Booleans
@@ -141,8 +151,6 @@ var imageChange = document.getElementById('image-toggle');
 	
 });
 
-
-
 //Background Mouseover Attribute
 
 document.getElementById("demo21").onmouseover = function() {mouseOver()};
@@ -181,8 +189,6 @@ function sqAnimate() {
     }
   }
 }
-
-
 
 // Global Javascrip for AEDubyah Websites
 
