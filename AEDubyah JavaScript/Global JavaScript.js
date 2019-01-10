@@ -1,5 +1,4 @@
 //JavaScript Practice
-
 //Methods
 function Para3() {
 	var para = document.getElementsByClassName("paragraph-h3");
@@ -10,6 +9,13 @@ function Para3a() {
 	var paraA = document.getElementsByClassName("paragraph-h3");
 	  document.getElementById("demo27").innerHTML = "Number of Paragraph-h3 =" + " " + paraA.length;
 }
+
+var virtual28 = ["Expert", "Professional", "Optimum", "Essential"];
+var i28, v28Array, v28Text;
+for (i28 = 0, v28Array= virtual28.length, v28Text = ""; i28 < v28Array; i28++){
+	  v28Text += virtual28[i28] + "<br>";
+}
+document.getElementById("demo28").innerHTML = v28Text;
 
 function Para3b() {
 	var paraB = document.getElementsByClassName("para-demo-27");
@@ -54,6 +60,21 @@ var person = {
 
 document.getElementById("demo5").innerHTML = person.firstName + " " + person.lastName + "," + " " + person.jobTitle;
 
+//goes with Loop
+var text29 = "";
+var client29 = {
+	clientfname: "May",
+	clientlname: "June",
+	clientcompany: "Real Deal Associates",
+	clientconverted: "May 1998"
+};
+var clientText;
+for (clientText in client29) {
+	text29 += client29[clientText] + " ";
+};
+
+document.getElementById("demo29").innerHTML = text29;
+
 //Arrays
 var quilts = ["King", "Queen", "Full", "Twin", "Baby"];
 	document.getElementById("demo16").innerHTML = "Best sales by size: " + quilts[2];
@@ -64,16 +85,15 @@ var quilts = ["King", "Queen", "Full", "Twin", "Baby"];
 var virtual1 = ["White Glove", "Grande", "Cut Above", "Essential"];
 	document.getElementById("demo18").innerHTML = "Lowest selling service: "+ virtual1[3];
 
-//Loops
-var services = ["Custom", "Secreterial", "Webnology", "Presentatins", "Excel Formulas"];
-var text = "";
-var loopI;
-for (loopI = 0; loopI < services.length; loopI++) {
-  text += services[loopI] + "<br>";
+// goes with Loop
+var i18 = 0;
+var text18 = "";
+while (virtual1[i18]) {
+	text18 += virtual1[i18] + "<br>";
+	i18++;
 }
-document.getElementById("demo28").innerHTML = text;
-	
-	
+document.getElementById("demo30").innerHTML = text18;
+
 //Booleans
 var aew1 = 10;
 var aew2 = 25;
@@ -142,15 +162,6 @@ function bgToogle() {
 	}
 }
 
-
-//Event Listener
-//Background Toggle Image
-var imageChange = document.getElementById('image-toggle');
-	imageChange.addEventListener('click',function() {
-    document.getElementById('demo22').classList.toggle('image-change2');
-	
-});
-
 //Background Mouseover Attribute
 
 document.getElementById("demo21").onmouseover = function() {mouseOver()};
@@ -174,6 +185,13 @@ function mouseOut() {
 	document.getElementById("demo21").innerHTML = "Color 1";
 }
 
+//Event Listener
+//Background Toggle Image
+var imageChange = document.getElementById('image-toggle');
+	imageChange.addEventListener('click',function() {
+    document.getElementById('demo22').classList.toggle('image-change2');
+});
+
 //Animation
 function sqAnimate() {
   var elem = document.getElementById("demo10");   
@@ -189,6 +207,8 @@ function sqAnimate() {
     }
   }
 }
+
+
 
 // Global Javascrip for AEDubyah Websites
 
