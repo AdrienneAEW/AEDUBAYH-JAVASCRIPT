@@ -109,6 +109,20 @@ var months = ["January","February","March","April","May","June","July","August",
 
 document.getElementById("demo6").innerHTML = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() + " - " + days[d.getDay()];
 
+//Date Methods
+document.getElementById("demo31").innerHTML = "Full Year: " + d.getFullYear();
+document.getElementById("demo32").innerHTML = "Month: " + months[d.getMonth()];
+document.getElementById("demo33").innerHTML = "Day: " + days[d.getDay()] + ", the " + d.getDate();
+document.getElementById("demo34").innerHTML = "Time: " + d.getHours() + ":" + d.getMinutes();
+
+//Date - Specific
+var d35 = new Date(2019, 0, 19, 11, 30);
+document.getElementById("demo35").innerHTML = "You have until " + months[d35.getMonth()] + " " + d35.getDate() + ", " + d35.getFullYear() + " " + d35.getHours() + ":" + d35.getMinutes() + " a.m." + " to submit your form.";
+
+var d36a = new Date(2019, 0, 19);
+var d36b = new Date(2019, 1, 19);
+document.getElementById("demo36").innerHTML = "You have between " + days[d36a.getDay()] +", " + months[d36a.getMonth()] + " " + d36a.getDate() + ", " + d36a.getFullYear() + " and " + days[d36b.getDay()] +", " + months[d36b.getMonth()]  + " " + d36b.getDate() + ", " + d36b.getFullYear() + " to submit your expenses.";
+
 // Forms
 // Reset
 function clearForm(){
