@@ -51,7 +51,7 @@ header {
 
 /* Main */
 main {
-    padding: 8px;
+    padding: 8px 0;
     background-color: #c8c8c8;
 }
 
@@ -72,11 +72,28 @@ main {
     align-self: center;
 }
 
+/* Form */
+#form-section {
+    background-color: lightblue;
+    padding: 28px 0;
+}
+
+#multi-form {
+    width: 80%;
+    margin: 0 auto;
+    background-color: darkolivegreen;
+    color: #e8e8e8;
+    border: 2px outset #333333;
+    border-radius: 30px;
+    padding: 24px;
+}
+
+/* Footer */
 footer {
    text-align: center;
-    padding: 3px 0;
-    background-color: #333333;
-    color: #e8e8e8;
-    font-weight: 700;
-    font-size: 1.1em;
+   padding: 3px 0;
+   background-color: #333333;
+   color: #e8e8e8;
+   font-weight: 700;
+   font-size: 1.1em;
 }

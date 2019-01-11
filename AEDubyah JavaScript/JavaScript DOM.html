@@ -29,6 +29,43 @@
         </section>
     </section>
 </section>
+
+<!-- form submission -->
+<section id="form-section">
+    <form action="/multi-form-data.xlsx" method="POST"  id="multi-form" >
+       <h2>Interest Form</h2>
+        <label for="submit-date">Date</label>
+        <input type="text" name="Timestamp" id="submit-date"  value="" aria-label="Form submission date." readonly/>
+        <label for="fname">First Name</label>
+        <input type="text" name="FirstName" id="fname" value="" aria-label="Enter your first name here." />
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="LastName" id="lname" value="" aria-label="Enter your last name here." />
+
+        <label for="email">Email</label>
+        <input type="email" name="Email" id="email" value="" aria-label="Enter your e-mail address here." />
+
+        <label for="cell">Cell &#35;</label>
+        <input type="tel" name="Cell" id="cell" value="" aria-label="Enter your cell phone number here." />
+
+        <label for="phone">Phone &#35;</label>
+        <input type="tel" name="Phone" id="phone" value="" aria-label="Enter your phone number here." />
+
+        <fieldset id="interest-group">
+            <legend>Choose Area of Interest&#63;</legend>
+            <input type="radio" name="Interest" value="Business Administrative" id="interest-admin" checked> Business Administration<br>
+            <input type="radio" name="Interest" value="Webnology" id="interest-webnology"> Webnology<br>
+            <input type="radio" name="Interest" value="Presentations" id="interest-present"> Presentations
+        </fieldset>
+
+        <label class="form-section-label">Contact Me Via</label>
+            <input type="checkbox" name="Contact Best" id="via-cell" value="Cell" aria-label="Via cell phone." > Via Cell
+            <input type="checkbox" name="Contact Best" id="via-phone" value="Phone" aria-label="Via cell phone." > Phone
+            <input type="checkbox" name="Contact Best" id="via-email" value="Email" aria-label="Via e-mail." > E-mail Me
+
+        <input type="submit" name="submit" value="Send" id="multi-form-submit">
+    </form>
+</section>
 </main>
 <footer id="page-footer">
     <p>Check Me Out...I'm practicing JavaScript baby!</p>
