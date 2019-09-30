@@ -6,11 +6,12 @@
 <meta name="description" content="JavaScript Practice" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="DOM styles.css" />
-<link rel="icon" href="https://aedubyahinorder.com/wp-content/uploads/2017/10/SamplesLogo.png" type="image/gif" sizes="16x16">
+<link rel="icon" href="https://aedubyahinorder.com/wp-content/uploads/2019/04/AEDLogoSquareBG.jpg" type="image/gif" sizes="16x16">
 
-<title>DOM Practicing</title>
+<title>DOM Practice</title>
 </head>
 <body>
+    <h1 class="title">Just a Test</h1>
 <header id="page-header">
         <h1 class="title page-title">I'm A Page Title</h1>
 </header>
@@ -29,18 +30,66 @@
         </section>
     </section>
 </section>
+<section id="dom-document">
+    <h1 class="js-heading">DOM Documet</h1>
+    <h2>HTLM Elements</h2>
+    <p id="dom-doc1" class="general-paragraph"></p>
+    <p id="dom-doc2" class="general-paragraph">I'm paragraph 2</p>
+    <p class="general-paragraph">I'm paragraph 3<br>
+        <span id="dom-doc3"></span>
+    </p>
+    <p class="general-paragraph">I'm paragraph 4<br>
+            <span id="dom-doc4"></span>
+    </p>
+    <p id="dom-doc5" class="general-paragraph">I'm paragraph 5</p>
+
+    <p class="general-paragraph">Tile of Document: <span id="dom-doc-title"></span></p>
+</section>
+<section id="dom-dates">
+    <h1 class="js-heading">DOM Dates</h1>
+    <h2>to Date String</h2>
+    <p id="dom-date1" class="general-paragraph"></p>
+</section>
+
+<section id="dom-functions">
+    <h1 class="js-heading">Arrow Functions</h1>
+    <p class="general-paragraph">Take 3 lines of code to one line of code by writing a fuction as an arrow function.  It's a shame I'm not that good with functions so arrow is not all that happy for me.  Still I must presist.</p>
+    <p id="arrow-demo1" class="general-paragraph"></p>
+    <p id="arrow-demo2" class="general-paragraph"></p>
+    <p id="arrow-demo3" class="general-paragraph"></p>
+
+    <h1 class="js-heading">Arrays</h1>
+    <h2>Value Of</h2>
+    <p class="general-paragraph">Returns an Array as a list separated by commas.</p>
+    <p id="arr-demo1" class="general-paragraph"></p>
+
+    <h2>Splice</h2>
+    <p class="general-paragraph">Add items to an Array.</p>
+    <p id="arr-demo2" class="general-paragraph"></p>
+
+    <p class="general-paragraph">Add and Delete Array items.</p>
+    <p id="arr-demo3" class="general-paragraph"></p>
+
+    <p class="general-paragraph">Delete items from Array</p>
+    <p id="arr-demo4" class="general-paragraph"></p>
+</section>
 
 <!-- form submission -->
 <section id="form-section">
-    <form action="/multi-form-data.xlsx" method="POST"  id="multi-form" >
+    <h2>Calling Form Elements</h2>
+   
+    <span class="general-paragraph">First name is : &nbsp;<span  id="form-demo"></span></span>
+
+    <form action="mailto:inbox_aedubyah@hotmail.com" method="POST"  enctype="multipart/form-data" zid="multi-form" >
        <h2>Interest Form</h2>
         <label for="submit-date">Date</label>
         <input type="text" name="Timestamp" id="submit-date"  value="" aria-label="Form submission date." readonly/>
+
         <label for="fname">First Name</label>
         <input type="text" name="FirstName" id="fname" value="" aria-label="Enter your first name here." />
 
         <label for="lname">Last Name</label>
-        <input type="text" name="LastName" id="lname" value="" aria-label="Enter your last name here." />
+        <input type="text" name="LastName" id="lname" value="Red" aria-label="Enter your last name here." />
 
         <label for="email">Email</label>
         <input type="email" name="Email" id="email" value="" aria-label="Enter your e-mail address here." />
@@ -64,6 +113,7 @@
             <input type="checkbox" name="Contact Best" id="via-email" value="Email" aria-label="Via e-mail." > E-mail Me
 
         <input type="submit" name="submit" value="Send" id="multi-form-submit">
+        <input type="reset" id="form-reset">
     </form>
 </section>
 </main>
