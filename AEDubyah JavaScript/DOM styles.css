@@ -99,6 +99,46 @@ main {
     margin-top: 16px; /*Remove after js practice*/
 }
 
+/* DOM Object */
+#dom-hair4 {
+    width: 300px;
+    height: 150px;
+    background-color: aqua;
+    margin-left: 25px;
+}
+
+/* DOM Events */
+#events button, #fsq1-btn {
+    margin-left: 25px;
+}
+
+
+/* OFF CANVAS */
+.off-site-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 14rem;
+    margin-left: -14rem;
+    background-color: salmon;
+    color: turquoise;
+}
+
+.site-container{
+    padding: 10px;
+    width: 75%;
+}
+
+.offsite-is-open .off-site-container,
+.offsite-is-open .site-container {
+    transform: translateX(14rem);
+}
+
+.off-site-container a {
+    display: block;
+    color: turquoise;
+}
+
 /* Footer */
 footer {
    text-align: center;

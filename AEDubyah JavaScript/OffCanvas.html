@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="AEW" />
+<meta name="description" content="JavaScript Practice" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="DOM styles.css" />
+<link rel="icon" href="https://aedubyahinorder.com/wp-content/uploads/2019/04/AEDLogoSquareBG.jpg" type="image/gif" sizes="16x16">
+
+<title>Off Canvas Menu Practice</title>
+</head>
+<body>
+<div class="off-site-container">
+    <nav class="nav">
+        <a href="javascript:void(0);" title="Home Page">Home</a>
+        <a href="javascript:void(0);" title="Work">Work</a>
+        <a href="javascript:void(0);" title="About">About</a>
+        <a href="javascript:void(0);" title="Contact">Contact</a>
+    </nav>
+</div>
+
+<div class="site-container">
+    <p>Click the button to open the side bar!  The menu fills th entire while the site container is this little square.  So only the site container will move left.  It works though.  Now I have to try this again without all the surroundings.  Maybe we'll do it on Codepen.  God is so so good!</p>
+    <button id="osc-btn">
+        <span>Menu</span>
+    </button>
+</div>
+
+
+<script>
+const menubtn = document.querySelector('#osc-btn')
+const body=document.body
+    menubtn.addEventListener('click', event=>{
+        body.classList.toggle('offsite-is-open')
+    })
+</script>
+</body>
+</html>
