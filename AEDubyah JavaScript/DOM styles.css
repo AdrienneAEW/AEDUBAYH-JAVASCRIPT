@@ -114,6 +114,12 @@ main {
 
 
 /* OFF CANVAS */
+
+.off-canvas-main {
+    position: relative;
+    background-color: transparent;
+}
+
 .off-site-container {
     position: fixed;
     top: 0;
@@ -126,7 +132,7 @@ main {
 
 .site-container{
     padding: 10px;
-    width: 75%;
+    width: 80%;
 }
 
 .offsite-is-open .off-site-container,
@@ -137,6 +143,11 @@ main {
 .off-site-container a {
     display: block;
     color: turquoise;
+}
+
+/* DOM ARRAY */
+.array-practice {
+    margin-left: 36px;
 }
 
 /* Footer */

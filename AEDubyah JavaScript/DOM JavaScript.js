@@ -5,7 +5,7 @@ var d = new Date();
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var day = d.getDate();
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var month = months[d.getMonth()];
+var monthnow = d.toLocaleString("default", {month: "long"});
 var year = d.getFullYear();
 var domDate = d.toDateString();
 
@@ -14,9 +14,19 @@ var domDate = d.toDateString();
 var dateColor = domDate.fontcolor("tomato");
 document.getElementById("dom-date1").innerHTML = dateColor;
 
+let today = d.toLocaleString()
+let todaydate = d.toLocaleDateString()
+let todayday = d.toLocaleString("default", {weekday: "long"})
+
+    document.getElementById("dom-date2").innerHTML = "To Local String = " + today + "<br>" + "A short date and time."
+    document.getElementById("dom-date3").innerHTML = "To Local Date String = " + todaydate + "<br>" + "A short date number date.";
+    document.getElementById("dom-date4").innerHTML = "To Local Date String = " + monthnow + "<br>" + "The current month in words.";
+    document.getElementById("dom-date5").innerHTML = "To Local Date String = " + todayday + "<br>" + "The current day in words.";
+
+  
 //Submit Date - see Global date format for variables
 if(document.getElementById("submit-date").value.length == 0) {
-    document.getElementById("submit-date").defaultValue = month + " " + day + ", " + year;
+    document.getElementById("submit-date").defaultValue = monthnow + " " + day + ", " + year;
 }
 //DOM DOCUMENT
 //Arrow

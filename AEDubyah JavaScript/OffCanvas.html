@@ -11,6 +11,7 @@
 <title>Off Canvas Menu Practice</title>
 </head>
 <body>
+<main class="off-canvas-main">
 <div class="off-site-container">
     <nav class="nav">
         <a href="javascript:void(0);" title="Home Page">Home</a>
@@ -21,19 +22,89 @@
 </div>
 
 <div class="site-container">
+
     <p>Click the button to open the side bar!  The menu fills th entire while the site container is this little square.  So only the site container will move left.  It works though.  Now I have to try this again without all the surroundings.  Maybe we'll do it on Codepen.  God is so so good!</p>
     <button id="osc-btn">
         <span>Menu</span>
     </button>
-</div>
 
+    <h1>Array Exercise</h1>
+    <div class="array-practice">
+        
+        <p id="arrdemo1"></p>
+        <p id="arrdemo2"></p>
+        <p id="arrdemo3"></p>
+        <p id="arrdemo4"></p>
+        <p id="arrdemo5"></p>
+        <p id="arrdemo6"></p>
+        <p id="arrdemo7"></p>
+        <p id="arrdemo8"></p>
+        <p id="arrdemo9"></p>
+    </div>
+
+    <div class="sample-page-logos">
+        <h1>Calabar Imports Site Logo URL</h1>
+        <img class="logo img-responsive" src="//cdn.shopify.com/s/files/1/0225/6837/t/8/assets/logo.png?150" alt="logo" style="width: 25%;">
+
+        <h1>Sisters Uptown Book Store Site Logo URL</h1>
+
+        <img src="//user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/255084/sisters_upt_logo_final_i3ls8u.png" alt="" title="" class="crop-default" data-description="" style="width: 30%;">
+    </div>
+</div>
+</main>
 
 <script>
 const menubtn = document.querySelector('#osc-btn')
-const body=document.body
+const body = document.body
     menubtn.addEventListener('click', event=>{
         body.classList.toggle('offsite-is-open')
     })
+
+// Array Practice
+let people = [
+  'Benjamin Franklin',
+  'Thomas Edison',
+  'Franklin Roosevelt',
+  'Napolean Bonaparte',
+  'Abraham Lincoln',
+  'Mother Theresa',
+  'Mahatma Gandhi',
+  'Winston Churchill',
+  'Charles Darwin',
+  'Albert Einstein',
+  'Pablo Picasso',
+  'Ludwig Beethoven',
+  'Walt Disney',
+  'Henry Ford',
+  'Steve Jobs'
+]
+
+people[12] = "DisneyLand"
+let friend1 = ["Renee Yvette"]
+let newpeople = friend1.concat(people)
+
+let friend2 = ["Audrey Gina"]
+let morepeople = people.concat(friend2)
+let addme = [].concat(
+    people.slice(0, 7),
+    ["Adrienne Warden"],
+    people.slice(7)
+)
+
+
+    document.getElementById("arrdemo1").innerHTML = "Gandhi has an index of " + people.indexOf('Mahatma Gandhi')
+    document.getElementById("arrdemo2").innerHTML = "Counting -5 from last array item I get " + people[people.length - 5]
+    document.getElementById("arrdemo3").innerHTML = "We've change Walt Disney to " + people[12]
+    document.getElementById("arrdemo4").innerHTML = "My first best friend " + newpeople[0] + " is now at the top of the list."
+    document.getElementById("arrdemo5").innerHTML = "My always best friend " + morepeople[15] + " is now at the end of the list."
+    document.getElementById("arrdemo6").innerHTML = "Winston Churchill has an index of " + people.indexOf('Winston Churchill') + " adding me, " + addme[7] + ", before him " + " means, Mr. Churchill has a new index of " + addme.indexOf("Winston Churchill")
+
+    document.getElementById("arrdemo7").innerHTML = "Ben Franklin had an index of 0, but has been removed and now has an index of " + people.indexOf("Benjamin Franklin")
+
+    document.getElementById("arrdemo8").innerHTML = "Steve Jobs had an index of 14, but has been removed and now has an index of " + people.indexOf("Steve Jobs")
+
+    document.getElementById("arrdemo9").innerHTML = "Napolean Bonaparte had an index of 3, but has been removed and now has an index of " + people.indexOf("Napolean Bonaparte")
+
 </script>
 </body>
 </html>
