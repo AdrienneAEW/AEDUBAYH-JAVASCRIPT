@@ -28,21 +28,42 @@ let todayday = d.toLocaleString("default", {weekday: "long"})
 if(document.getElementById("submit-date").value.length == 0) {
     document.getElementById("submit-date").defaultValue = monthnow + " " + day + ", " + year;
 }
+
+//DOM WINDOW
+let winheight = window.innerHeight
+let winwidth = window.innerWidth
+let winoutheight = window.outerHeight
+let winoutwidth = window.outerWidth
+
+    document.getElementById("window-demo1").innerHTML = "The inner height of the window is " + winheight + " and the width is " + winwidth + "." + "The outer height is " + winoutheight + " and the outer width is " + winoutwidth + "."
+
+let horpostion = window.pageXOffset
+let verposition = window.pageYOffset
+
+    document.getElementById("window-demo2").innerHTML = "Window is offset horizontally by " + horpostion + " and the offset vertically is " + verposition + "."
+
+  
 //DOM DOCUMENT
-//Arrow
-let num1 = 5
-let num2 = 10
-const sumArrow = (num1, num2) => num1 + num2
-const arrowTotal = sumArrow(5,7)
-	document.getElementById("arrow-demo1").innerHTML = "The total is " + arrowTotal
+//Arrow 
 
-const arrowName = (name1, name2) => name2 + ", " + name1
-let clientName = arrowName("Adrienne","Warden")
-    document.getElementById("arrow-demo2").innerHTML = "Client up next is: " + clientName
+let arrowForm = document.getElementById("arrow-form")
+    let arrowColor = () => arrowForm.style.backgroundColor = "pink"
 
-const maRed = (maidenName, marriedName) => maidenName + " after marriage " + maidenName + " - " + marriedName
-let motherName = maRed("Warden","Brown")
-    document.getElementById("arrow-demo3").innerHTML = "My mother's maiden name was " + motherName
+     
+let arrowElements = arrowForm.length
+let arrowFName = arrowForm["firstname"]
+let arrowLName = arrowForm["lastname"]
+let arrowFullName = arrowFName.value + " " + arrowLName.value
+
+let arrowUpdate = () => {
+        document.getElementById("text-entry").value = arrowFName.value + " " + arrowLName.value
+        arrowForm.style.backgroundColor = "pink"
+}
+    
+    document.getElementById("arrow-demo1").innerHTML = "Arrow Form number of elements are " + arrowElements  
+    document.getElementById("arrow-demo2").innerHTML = "Arrow Form full name is " + arrowFullName
+    document.getElementById("arrow-demo3").innerHTML = "Arrow form text entry is "
+
 
 
 var mDoc = document.getElementById("dom-document");
@@ -62,6 +83,71 @@ document.getElementById("dom-doc4").innerHTML = "This document was modified on: 
 
 //Query Selector
 document.querySelector(".title").style.fontStyle = "underline";
+
+    //call demo 1
+    let nameObject = document.getElementsByClassName("name-call")
+    let ncList 
+    for (ncList = 0; ncList < nameObject.length; ncList++) {
+        nameObject[ncList].style.marginLeft = "24px"
+    }
+
+        document.getElementById("call-demo1").innerHTML = "There are " + nameObject.length + " elements with the class \"Name Call\"."
+        const callsName = {
+            firstCN: 'Martha',
+            lastCN: 'Stewart',
+            fullCN: function() {
+                return this.firstCN + " " + this.lastCN
+            }
+        }
+        
+        nameObject[0].innerHTML = "I'm thinking of a special, successful person and " + callsName.firstCN + " is their first name."
+        nameObject[1].innerHTML = "It's a she and of course her last name is " + callsName.lastCN + "."
+        nameObject[2].innerHTML = "My special and successful person\'s\ full name is " + callsName.fullCN() + "."
+
+    //call demo 2
+    let cvObject = document.getElementsByClassName("cv-call")
+    let cvList
+    for (cvList = 0; cvList < cvObject.length; cvList++) {
+        cvObject[cvList].style.marginLeft = "24px"
+    }
+
+    document.getElementById("call-demo2").innerHTML = "There are " + cvObject.length + " elements with the class \"CV Call\"."
+    const cvClient = {
+        client: 'Gregory Henry',
+        clientid: 'SS513',
+        cvtype: 'Traditional',
+        cvcost: 274.99,
+        cvexpense: 43.61
+    }
+
+    let cvtotal = cvClient.clienttotal
+    cvClient.clienttotal = cvClient['cvcost'] + cvClient['cvexpense']
+
+    document.getElementById("cv-total").innerHTML = "Total Amount Due:  $" + cvClient['clienttotal']
+    document.getElementById("cv-total").style.marginLeft = "150px"
+    document.getElementById("cv-total").style.fontWeight = "700"
+
+    cvObject[0].innerHTML = "Client:  " + cvClient['client']
+    cvObject[1].innerHTML = "Client ID:  " + cvClient['clientid']
+    cvObject[2].innerHTML = "CV Type:  " + cvClient['cvtype']
+    cvObject[3].innerHTML = "Design Fee:  $" + cvClient['cvcost']
+    cvObject[4].innerHTML = "Plus Expense:  $" + cvClient['cvexpense']
+
+    //call demo 3
+    let formCall4 = document.forms["form-calls"]["call3-gender"]
+    let fc4Length = formCall4.length
+        formCall4[0].checked = true
+    let fc4List
+    let fc4Text = ""
+
+        for (fc4List = 0; fc4List < fc4Length; fc4List++) {
+            fc4Text += formCall4[fc4List].value + "<br>"
+        }
+
+        document.getElementById("call-demo4").innerHTML = "There are " + fc4Length + "  \"Gender\" selects."
+        document.getElementById("call-demo5").innerHTML = "The list of values for gender radios are:" + "<br>" + fc4Text
+        
+        
 //ARRAYS
 //Value Of
 var arrServices = ["Optimal", "Expert", "Professional", "Essential"];
@@ -95,9 +181,7 @@ function formHello() {
     }
 }
 
-function formChecks() {
-    let
-}
+
 
 //Objects
 const hairItem = {

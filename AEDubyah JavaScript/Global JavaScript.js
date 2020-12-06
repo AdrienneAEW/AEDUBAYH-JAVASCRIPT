@@ -1,4 +1,63 @@
 //JavaScript Practice
+//JS Challenges
+
+	//Todo List
+	let todoDate = document.getElementById("todo-date");
+	let todoTask = document.getElementById("todo-task");
+	let todoAdd = document.getElementById("addtask-btn");
+	let todoMaster = document.getElementById("todo-list");
+
+		function addTask() {
+		let todoRow = document.createElement("li");
+		let todoDelete = document.createElement("button");
+			todoDelete.innerHTML = "X";
+		let todoDeleteClass = document.createAttribute("class");
+			todoDeleteClass.value = "todo-delete";
+		let todoDeleteTitle = document.createAttribute("title");
+			todoDeleteTitle.value = "Delete Task";
+		let dateOfTask = todoDate.value;
+		let taskItem = todoTask.value;
+		let todoValue = document.createTextNode(dateOfTask + " - " + taskItem);
+		
+		
+			todoDelete.setAttributeNode(todoDeleteClass);
+			todoDelete.setAttributeNode(todoDeleteTitle);
+		todoRow.appendChild(todoValue)
+		todoRow.appendChild(todoDelete);
+		todoMaster.appendChild(todoRow);
+		}
+
+	//Expense List
+	let expTable = document.getElementById("expense-table");
+	let expDate = document.getElementById("expense-date");
+	let expDesc = document.getElementById("expense");
+	let expAmount = document.getElementById("expense-amount")
+	
+		function addExpense() {
+		let expDelete = document.createElement("button");
+			expDelete.innerHTML = "X";
+		let closeClass = document.createAttribute("class");
+			closeClass.value = "exp-btn";
+		let closeTitle = document.createAttribute("title");
+			closeTitle.value = "Remove Expense";
+			expDelete.setAttributeNode(closeClass);
+			expDelete.setAttributeNode(closeTitle);
+
+		let expRecord = expTable.insertRow();
+		let dateOf = expRecord.insertCell(0);
+		let descOf = expRecord.insertCell(1);
+		let amountOf = expRecord.insertCell(2);
+		let endOf = expRecord.insertCell(3);
+
+			dateOf.innerHTML = expDate.value
+			descOf.innerHTML = expDesc.value;
+			amountOf.innerHTML = "$" + expAmount.value;
+			endOf.appendChild(expDelete);
+
+
+		}
+
+
 //Methods
 function Para3() {
 	var para = document.getElementsByClassName("paragraph-h3");

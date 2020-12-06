@@ -15,6 +15,44 @@
 <h1>DOM</h1>
 <p class="paragraph-h1">Document Object Modal</p>
 
+<!--JS Challenges-->
+<h2>JS Challenges</h2>
+<p class="paragraph-h2"><b>Do Not</b> copy code from any where, keep it simple, add a delete button to list items</p>
+
+<h3>To Do List App</h3>
+<p class="paragraph-h3">Build From Scratch - Referencing Okay</p>
+	<div id="todo-data" class="paragraph-h3">
+		<input type="date" placeholder="mm-dd-yyyy" id="todo-date">
+		<input type="text" placeholder="Enter Task" id="todo-task">
+		<button type="button" id="addtask-btn" onclick="addTask()">Add</button>
+	</div>
+	<ul id="todo-list" class="paragraph-h3" style="list-style-type: decimal;"></ul>
+
+
+<h3>Expense Report App</h3>
+<p class="paragraph-h3">Build From Scratch - Referencing Okay</p>
+	<div class="paragraph-h3">
+		<div id="expense-data">
+			<input type="date" placeholder="mm-dd-yyyy" id="expense-date">
+			<input type="text" placeholder="Enter Expense" id="expense">
+			<input type="number" placeholder="$" id="expense-amount">
+			<button type="button" id="add-expense" title="Add Expense" onclick="addExpense()">Add</button>
+		</div>
+
+		<table id="expense-table">
+			<caption>Expense Report</caption>
+			<thead>				
+				<th>Date</th>
+				<th>Expense</th>
+				<th>Amount</th>
+				<th>Remove</th>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	
+
+<!--#region js content -->
 <!--Variables-->
 <h2>Declaring Variables</h2>
 <p class="paragraph-h2">Using Let</p>
@@ -204,8 +242,7 @@ Name: <input type="text" name="fname">
 <input type="submit" value="Submit">
 <input type="reset" title="Pressing this button resets the entire form.">
 </form>
-
-
+<!--#endregion-->
 
 
 <script src="Global JavaScript.js"></script>

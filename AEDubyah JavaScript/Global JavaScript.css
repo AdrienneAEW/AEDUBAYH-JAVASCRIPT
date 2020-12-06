@@ -1,4 +1,4 @@
-/* Global Styles */
+/*#region Global Styles */
 
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -87,7 +87,42 @@ button {
 #demo8b-caption {
 	display: none;
 }
+/*#endregion*/
 
+/*#region JS CHALLENGES*/
+#expense-table {
+	border-collapse: collapse;
+	width: 75%;
+	margin: 36px 0;
+}
+
+#expense-table caption {
+	font-size: 2em;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+#expense-table, tr, th, td {
+	border: 1px solid;
+}
+
+#expense-table td {
+	padding: 5px 8px;
+}
+#expense-table td:nth-of-type(1) {
+	width: 20%;
+}
+
+#expense-table td:nth-of-type(3) {
+	width: 100px;
+	text-align: right;
+}
+
+#expense-table td:nth-of-type(4) {
+	width: 40px;
+	text-align: center;
+}
+/*endregion*/
 
 /* Image Toggle */
 .image-change {
@@ -100,7 +135,8 @@ button {
 .image-change2 {
 	background-image: url("https://picsum.photos/2250/1556?image=1068");	
 }
-/* Animation */
+
+/*#region Animation */
 .animate {
 	position: relative;
 	width: 400px;
@@ -142,3 +178,5 @@ button {
 .mouse-words {
 	font-size: 1.25em;
 }
+
+/*#endregion*/

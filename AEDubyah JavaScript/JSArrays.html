@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="Author" content="AEW" />
+<meta name="description" content="JavaScript Arrays" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="DOM styles.css" />
+<link rel="icon" href="https://aedubyahinorder.com/wp-content/uploads/2019/04/AEDLogoSquareBG.jpg" type="image/gif" sizes="16x16">
+
+<title>Arrays Practice</title>
+</head>
+<body>
+<main>
+    
+<h1 class="js-heading">Array Practice</h1>
+<p class="general-paragraph">Practice Makes Perfect...Praise God for a new day and new attempt.  I am forever grateful.</p>
+
+<section class="section-indent">
+    <h2>Placing Text In All Classes</h2>
+    <p class="general-paragraph question">A. Create an 3 elements with the same class tag.  Make the second element red. Put the current year in all 3 elements.  Change the font size of the last element.</p>
+    <p id="class-array1" class="general-paragraph answer">An array will replace this text.<span class="year-now"></span></p>
+    <p id="class-array2" class="general-paragraph answer">An array will replace this text.<span class="year-now"></span></p>
+    <p id="class-array3" class="general-paragraph answer">An array will replace this text.<span class="year-now"></span></p>
+</section>
+
+<section class="section-indent">
+    <h2>Working With Site Generated Lists</h2>
+    <p class="general-paragraph question">1. Create an array list of 5 items.  Call the 3rd item on the list</p>
+    <p id="array-list1" class="general-paragraph answer">An array will replace this text.</p>
+    <p class="general-paragraph question">2. Create a new array with 2 items and combine it with the previous array.  Call the new array with a comma and space between items.</p>
+    <p id="array-list2" class="general-paragraph answer">An array will replace this text.</p>
+    <p class="general-paragraph question">3. Create three arrays with three items each.  Concatenate all the arrays into one new array.  Call the new array as a ul list by looping through the entire list.</p>
+    <p id="array-list3" class="general-paragraph answer">An array will replace this text.</p>
+    <p class="general-paragraph question">4. Repeat - Make new arrays and follow the steps of question 2 again without looking.</p>
+    <p id="array-list4" class="general-paragraph answer">An array will replace this text.</p>
+    <p class="general-paragraph question">5. Repeat - Make new arrays and follow the steps of question 3 again without looking.</p>
+    <p id="array-list5" class="general-paragraph answer">An array will replace this text.</p>
+</section>
+</main>
+
+
+<script>
+//Populating All Classes
+const dateNow = new Date()
+const yearNow = dateNow.getFullYear()
+const arrClass = document.getElementsByClassName("year-now")
+
+    
+    
+let arrDate = arrClass.length
+let arrDUpdate
+    for (arrDUpdate = 0; arrDUpdate < arrDate; arrDUpdate++) {
+        arrClass[arrDUpdate].innerHTML = " The year is " + yearNow
+        arrClass[2].style.fontSize = "2em"
+        
+
+    }
+
+    
+
+    
+
+
+ 
+
+
+//Lists
+let pets = ["Cat", "Dog", "Turtle", "Bird", "Fish"]
+let thirdPet = pets[2]
+document.querySelector("#array-list1").innerHTML = "The third item on the array list is " + thirdPet
+
+let petsA = ["Hedgehog", "Pig"]
+let petList = pets.concat(petsA)
+document.querySelector("#array-list2").innerHTML = "A new array with separation <br>" + petList.join(", ")
+
+let partA = ["Shoes", "Coats", "Scarfs"]
+let partB = ["Hats", "Gloves", "Rubber Boots"]
+let partC = ["Sweater", "Jacket", "Socks"]
+let partList = partA.concat(partB, partC)
+let partCount = partList.length
+let partText, iPart
+
+partText = "<ul>"
+for (iPart = 0; iPart < partCount; iPart++) {
+    partText += "<li>" + partList[iPart] + "</li>"
+}
+partText += "</ul>";
+document.querySelector("#array-list3").innerHTML = partText
+
+let homeA = ["Couch", "Comfy Chair", "Highback Chair", "Coffee Table", "Love Seat"]
+let homeB = ["Ottoman", "Side Table"]
+let homeList = homeA.concat(homeB)
+document.querySelector("#array-list4").innerHTML = "Repeat of questions 2; and I did not look...Amen.<br>" + homeList.join(", ")
+
+let officeA = ["Stapler", "Paper Clips", "Staples"]
+let officeB = ["Desk", "Office Chair", "File Cabinets"]
+let officeC = ["Copier", "Computer", "Phone"]
+let officeList = officeA.concat(officeB, officeC)
+let officeLen = officeList.length
+let officeText, iOffice
+
+officeText = "<ul>"
+for (iOffice = 0; iOffice < officeLen; iOffice++) {
+    officeText += "<li>" + officeList[iOffice] + "</li>"
+}
+officeText += "</ul>"
+
+document.querySelector("#array-list5").innerHTML = "Didn't look but will redo...Amen<br>" + officeText
+
+</script>
+</body>
+</html>
