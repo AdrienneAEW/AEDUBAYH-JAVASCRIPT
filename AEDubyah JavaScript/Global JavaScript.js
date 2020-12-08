@@ -1,6 +1,5 @@
 //JavaScript Practice
 //JS Challenges
-
 	//Todo List
 	let todoDate = document.getElementById("todo-date");
 	let todoTask = document.getElementById("todo-task");
@@ -58,66 +57,13 @@
 		}
 
 
-//Methods
-function Para3() {
-	var para = document.getElementsByClassName("paragraph-h3");
-	  document.getElementById("demo26").innerHTML = para;
-}
-
-function Para3a() {
-	var paraA = document.getElementsByClassName("paragraph-h3");
-	  document.getElementById("demo27").innerHTML = "Number of Paragraph-h3 =" + " " + paraA.length;
-}
-
+//For Loop
 var virtual28 = ["Expert", "Professional", "Optimum", "Essential"];
 var i28, v28Array, v28Text;
 for (i28 = 0, v28Array= virtual28.length, v28Text = ""; i28 < v28Array; i28++){
 	  v28Text += virtual28[i28] + "<br>";
 }
 document.getElementById("demo28").innerHTML = v28Text;
-
-function Para3b() {
-	var paraB = document.getElementsByClassName("para-demo-27");
-	  paraB[1].style.backgroundColor = "pink";
-	  paraB[2].style.backgroundColor = "green";
-	  paraB[2].style.color = "white";
-}
-//Statements
-var expense, labor, cost;
-	var expense = 20;
-	var labor = 65;
-	var cost = expense + labor;
-	document.getElementById("demo11").innerHTML = "The cost is: $" + cost;
-
-var courseDays, courseCost, courseAvgCost;
-	var courseDays = 60;
-	var courseCost = 1500;
-	var courseAvgCost = courseCost / courseDays;
-	document.getElementById("demo12").innerHTML = "Course average per day = $" + courseAvgCost;
-
-var operatorStatement = 25;
-operatorStatement *= 4;
-document.getElementById("demo13").innerHTML = "25 x 4=" + operatorStatement;
-
-
-//Strings
-var color = ["Red", "Yellow", "Orange", "Purple"];
-	document.getElementById("demo1").innerHTML = color[3] + " is a beautiful color.";
-	document.getElementById("demo1").style.fontWeight = "700";
-
-var price1 = 5;
-var price2 = 12;
-	var total = price1 + price2;
-	document.getElementById("demo4").innerHTML = "The total is: " + total;
-
-// Object
-var person = {
-	firstName: "Regina",
-	lastName: "The Great",
-	jobTitle: "President"
-};
-
-document.getElementById("demo5").innerHTML = person.firstName + " " + person.lastName + "," + " " + person.jobTitle;
 
 //goes with Loop
 var text29 = "";
@@ -153,34 +99,39 @@ while (virtual1[i18]) {
 }
 document.getElementById("demo30").innerHTML = text18;
 
-//Booleans
-var aew1 = 10;
-var aew2 = 25;
-var aew3 = 10;
-	document.getElementById("demo14").innerHTML = (aew1 == aew2);
 
-	document.getElementById("demo15").innerHTML = (aew1 == aew3);
+// Object
+var person = {
+	firstName: "Regina",
+	lastName: "The Great",
+	jobTitle: "President"
+};
+
+document.getElementById("demo5").innerHTML = person.firstName + " " + person.lastName + "," + " " + person.jobTitle;
+
 
 // Dates
-var d = new Date();
-var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+let dayCurrent = new Date();
+let dayLocal = dayCurrent.toLocaleDateString();
+let monthName = dayCurrent.toLocaleDateString('default', {month: 'long'});
+let dayName = dayCurrent.toLocaleDateString('default', {weekday: 'long'});
+let yearCurrent = dayCurrent.getFullYear();
+let dayFull = monthName + " " + dayCurrent.getDate() + ", " + yearCurrent;
 
-document.getElementById("demo6").innerHTML = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear() + " - " + days[d.getDay()];
 
-//Date Methods
-document.getElementById("demo31").innerHTML = "Full Year: " + d.getFullYear();
-document.getElementById("demo32").innerHTML = "Month: " + months[d.getMonth()];
-document.getElementById("demo33").innerHTML = "Day: " + days[d.getDay()] + ", the " + d.getDate();
-document.getElementById("demo34").innerHTML = "Time: " + d.getHours() + ":" + d.getMinutes();
 
-//Date - Specific
-var d35 = new Date(2019, 0, 19, 11, 30);
-document.getElementById("demo35").innerHTML = "You have until " + months[d35.getMonth()] + " " + d35.getDate() + ", " + d35.getFullYear() + " " + d35.getHours() + ":" + d35.getMinutes() + " a.m." + " to submit your form.";
 
-var d36a = new Date(2019, 0, 19);
-var d36b = new Date(2019, 1, 19);
-document.getElementById("demo36").innerHTML = "You have between " + days[d36a.getDay()] +", " + months[d36a.getMonth()] + " " + d36a.getDate() + ", " + d36a.getFullYear() + " and " + days[d36b.getDay()] +", " + months[d36b.getMonth()]  + " " + d36b.getDate() + ", " + d36b.getFullYear() + " to submit your expenses.";
+
+
+
+	document.querySelector("#current-date1").innerHTML = "Today's date is :" + dayLocal;
+	document.querySelector("#current-date2").innerHTML = "The current month is " + monthName;
+	document.querySelector("#current-date3").innerHTML = "Today is " + dayName;
+	document.querySelector("#current-date4").innerHTML = "The current year is ";
+	document.querySelector("#current-date4").innerHTML = "Date as Month (name), day and year = " + dayFull;
+	
+
+
 
 // Forms
 // Reset
@@ -198,8 +149,19 @@ function validateForm() {
 
 
 function myFunction(){
-	document.getElementById("demo2").innerHTML = "you to kiss me...";
-	document.getElementById("demo3").innerHTML = "I would love too!";
+	let hideMe = document.getElementById("demo2"); 
+		hideMe.innerHTML = "you to kiss me...";
+	let theAnswer = document.createElement("button");
+		theAnswer.innerHTML = "Answer";
+	let answerTitle = document.createAttribute("title");
+		answerTitle.value = "Click me for an answer.";
+		theAnswer.setAttributeNode(answerTitle)
+	hideMe.appendChild(theAnswer);
+		theAnswer.style.marginLeft = "20px";
+
+		theAnswer.onclick = function() {
+			document.getElementById("demo3").innerHTML = "I would love too!";
+		}
 }
 
 //Change Image Attribute

@@ -83,6 +83,14 @@ button {
 	font-weight: 800;
 }
 
+label {
+	display: block;
+}
+
+input + label {
+	margin-top:12px;
+}
+
 /* Display None */
 #demo8b-caption {
 	display: none;
