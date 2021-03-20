@@ -1,0 +1,74 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Roboto', san-serif;
+	font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'EB Garamond', cursive;
+	padding: 8px 0 8px 15px;
+}
+
+h1 {
+	font-size: 2.5em;
+	color: navy;
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+
+.paragraph-h1 {
+	margin-left: 24px;
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 2em;
+	padding-left: 30px;
+	color: green;
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.paragraph-h2, .btn-h2 {
+	margin-left: 40px;
+}
+
+
+h3 {
+	font-size: 1.75em;
+	padding-left: 45px;
+	color: orange;
+}
+
+.paragraph-h3, .form-h3, .btn-h3 {
+	margin-left: 50px;
+}
+
+h4 {
+	font-size: 1.5em;
+	padding-left: 55px;
+	color: purple;
+}
+
+.paragraph-h4, .btn-h4 {
+	margin-left: 60px;
+}
+
+button {
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding: 8px 12px;
+}
