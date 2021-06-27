@@ -72,4 +72,47 @@ button {
   letter-spacing: 2px;
   padding: 8px 12px;
 }
+
+.center-content, #family-app-form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* FAMILY APP */
+#family-app-form {
+  width: 90%;
+  border: 2px solid olivedrab;
+  padding: 28px;
+}
+
+#family-app-form input[type=text], #family-app-form select {
+  width: 100%;
+  padding: 5px 12px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+#family-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#family-list p {
+  margin-left: 75px;
+}
+
+#family-members {
+  width: 35%;
+  margin-right: 16px;
+}
+
+#related-family {
+  width: 35%;
+}
+
+#related-family h3 {
+  margin-left: 0;
+  padding: 0;
+}
 /*# sourceMappingURL=LearnJS-styles.css.map */

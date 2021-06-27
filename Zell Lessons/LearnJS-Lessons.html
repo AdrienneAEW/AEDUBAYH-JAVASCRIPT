@@ -5,13 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="LearnJS-styles.css">
-    <link rel="icon" href="https://aedubyahinorder.com/wp-content/uploads/2017/10/SamplesLogo.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="https://adrienneaew.me/wp-content/uploads/2017/02/cropped-AEWLogo-SB.png" type="image/gif" sizes="16x16">
     <title>Learn JS Lessons</title>
 </head>
 <body>
 <main>
 <h1>Go Live Adrienne - Go Live Girl</h1>
-<p class="paragraph-h1 js-test1">I'm going to change on a click.</p>
+
+<p class="paragraph-h1 js-test1" onclick="swapText()" style="cursor: help;">Click me to see the next lesson.</p>
+<p class="paragraph-h1 js-test2"></p>
+
+<h1>Building a Family App</h1>
+<p>Welcome To the Family App - Here's how it works &mdash; back at you on that one.</p>
+
+    <form action="" id="family-app-form">
+        <label for="family-member">Enter Name Of Family Member</label>
+        <p style="font-size: .75em;">Enter first name only.</p>
+        <input type="text" name="member" id="family-member" class="app-inputs" required pattern="[A-Za-z]{1,20}" title="First Names Only - Up to 20 Charaters" maxlength="20" />
+        <label for="family-relation">Choose Relationship</label>
+        <p style="font-size: .75em;">Choose family relationship from &#40;<strong><u>list only</u></strong>&#41;&comma; then click &ldquo;<strong>Add Member</strong>&rdquo; to add family.</p>
+        <select id="family-relation" name="fam-relationship">
+            <option value="grandmother">Grandmother</option>
+            <option value="grandfather">Grandfather</option>
+            <option value="mother" selected>Mother</option>
+            <option value="father">Father</option>
+            <option value="aunt">Aunt</option>
+            <option value="uncle">Uncle</option>
+            <option value="sister">Sister</option>
+            <option value="brother">Brother</option>
+            <option value="cousin">Cousin</option>
+            <option value="son">Son</option>
+            <option value="daughter">Daughter</option>
+
+        </select>
+        <button type="button" id="add-member">Add Member</button>
+        <button type="button" id="add-categories" title="Generate family categories list.">Generate Categories</button>
+    </form>
+    <div id="family-list">
+        <div id="family-members">
+            <h3>My Family</h3>
+        </div>
+        <div id="related-family">
+            <h3>My Family Relations</h3>
+            <label for="relation-select">My</label>
+            <select id="relation-select">
+                <option value="grandparents">Grand Parents</option>
+                <option value="grandmother">Grandmother&#40;s&#41;</option>
+                <option value="grandfather">Grandfather&#40;s&#41;</option>
+                <option value="parents" selected>Parents</option>
+                <option value="mother">Mother&#40;s&#41;</option>
+                <option value="father">Father&#40;s&#41;</option>
+                <option value="aunt">Aunt&#40;s&#41;</option>
+                <option value="uncle">Uncle&#40;s&#41;</option>
+                <option value="siblings">Sibling&#40;s&#41;</option>
+                <option value="sister">Sister&#40;s&#41;</option>
+                <option value="brother">Brother&#40;s&#41;</option>
+                <option value="cousin">Cousin&#40;s&#41;</option>
+                <option value="children">Children</option>
+                <option value="son">Son&#40;s&#41;</option>
+                <option value="daughter">Daughter&#40;s&#41;</option>
+            </select>
+            <button type="button" id="fam-relative-btn" title="Click to View List">View List</button>
+            <p id="fam-category-list" style="margin-left: 24px;">List Goes Here</p>
+        </div>
+    </div>
+    
 </main>
 
 <script src="LearnJS-script.js"></script>    
