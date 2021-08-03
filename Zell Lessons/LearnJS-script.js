@@ -8,13 +8,17 @@
 //#region FAMILY APP
 let famMember = document.querySelector("#family-member");
 let famRelation = document.querySelector("#family-relation");
+let relationChoices = famRelation.querySelectorAll('option');
+let famMemberList = document.querySelector("#family-members");
+let selectRelation = document.querySelector("#relation-select"); 
+let resultChoice = selectRelation.querySelectorAll('option');
+let relationResult = document.querySelector("#fam-category-list");
+let relativeStatus = "";
+
+//Buttons
 let addFamBtn = document.querySelector("#add-member");
 let addCategoryBtn = document.querySelector("#add-categories");
-let famMemberList = document.querySelector("#family-members");
-let relationSelect = document.querySelector("#fam-relative-btn");
-let rlistSelect = document.querySelector("#relation-select"); 
-let relationParagraph = document.querySelector("#fam-category-list");
-  
+let viewRelationsBtn = document.querySelector("#fam-relative-btn");
 
 //Family Members
 let members = {
@@ -22,108 +26,6 @@ let members = {
   relationship: []
 }
 
-addFamBtn.onclick = function() {
-  if (famMember.value == "") {
-    alert("You have to enter a name to submit.");
-    return false;
-  } else {
-  members.name.push(famMember.value);
-  members.relationship.push(famRelation.value);
-  let memberListItem = document.createElement("p");
-  let memberClass = document.createAttribute("class");
-    memberClass.value = "member-name";
-    memberListItem.setAttributeNode(memberClass);
-    memberListItem.innerHTML = famMember.value;
-    famMemberList.appendChild(memberListItem);
-
-  famMember.value = "";
-  }
-
-}
-
-addCategoryBtn.onclick = function() {
-  addFamBtn.disabled = true;
-  members.relationship.forEach(parents);
-  members.relationship.forEach(mothers);
-  members.relationship.forEach(fathers);
-  members.relationship.forEach(grands);
-  members.relationship.forEach(grandfathers);
-  members.relationship.forEach(grandmothers);
-  members.relationship.forEach(aunts);
-  members.relationship.forEach(uncles);
-  members.relationship.forEach(siblings);
-  members.relationship.forEach(sisters);
-  members.relationship.forEach(sisters);
-  members.relationship.forEach(brothers);
-  members.relationship.forEach(children);
-  members.relationship.forEach(sons);
-  members.relationship.forEach(daughters);
-  members.relationship.forEach(counsins);
-
-  if (famRelationList.myGrandmother == "") {
-    famRelationList.myGrandmother.push("There are no grandmother entries.");
-  }
-
-  if (famRelationList.myGrandfather == "") {
-    famRelationList.myGrandfather.push("There are no grandfather entries.");
-  }
-
-  if (famRelationList.myGrandparents == "") {
-    famRelationList.myGrandparents.push("There are no grandparent entries.");
-  }
-
-  if (famRelationList.appMother == "") {
-    famRelationList.appMother.push("There are no mother entries.");
-  }
-
-  if (famRelationList.appFather == "") {
-    famRelationList.appFather.push("There are no father entries.");
-  }
-
-  if (famRelationList.myParents == "") {
-    famRelationList.myParents.push("There are no parent entries.");
-  }
-
-  if (famRelationList.myAunts == "") {
-    famRelationList.myAunts.push("There are no aunt entries.");
-  }
-
-  if (famRelationList.myUncles == "") {
-    famRelationList.myUncles.push("There are no uncle entries.");
-  }
-
-  if (famRelationList.myBrother == "") {
-    famRelationList.myBrother.push("There are no brother entries.");
-  }
-
-  if (famRelationList.mySister == "") {
-    famRelationList.mySister.push("There are no sister entries.");
-  }
-
-  if (famRelationList.mySiblings == "") {
-    famRelationList.mySiblings.push("There are no sibling entries.");
-  }
-
-  if (famRelationList.myCousins == "") {
-    famRelationList.myCousins.push("There are no counsin entries.");
-  }
-
-  if (famRelationList.mySon == "") {
-    famRelationList.mySon.push("There are no son entries.");
-  }
-
-  if (famRelationList.myDaughter == "") {
-    famRelationList.myDaughter.push("There are no daughter entries.");
-  }
-
-  if (famRelationList.myChildren == "") {
-    famRelationList.myChildren.push("There are no children entries.");
-  }
-
-  addCategoryBtn.disabled = true;
-}
-
-//Family Relationships
 let famRelationList = {
   myGrandmother: [],
   myGrandfather: [],
@@ -139,137 +41,226 @@ let famRelationList = {
   myCousins: [],
   mySon: [],
   myDaughter: [],
-  myChildren: []
+  myChildren: [],
+  myNieces: [],
+  myNephews: []
 };
 
+addFamBtn.onclick = function() {
+  if (famMember.value == "") {
+    alert("You have to enter a name to submit.");
+    return false;
+  } 
+    let newMember = famMember.value;
+    let newRelation = famRelation.value;
+    members.name.push(newMember);
+    members.relationship.push(newRelation);
 
-relationSelect.onclick = function() {
+    switch (newRelation) {
+      case "mother":
+        famRelationList.appMother.push(newMember);
+        famRelationList.myParents.push(newMember);
+        break;
+      
+      case "father":
+        famRelationList.appFather.push(newMember);
+        famRelationList.myParents.push(newMember);
+        break;
 
-  let famCategory = rlistSelect.selectedIndex;
-  let categoryChoice = rlistSelect.item(famCategory).value
-  
-    if (categoryChoice == "grandparents") {
-      relationParagraph.innerHTML = famRelationList.myGrandparents.join(", ");
-    } else if (categoryChoice == "grandmother") {
-      relationParagraph.innerHTML = famRelationList.myGrandmother.join(", ");
-    } else if (categoryChoice == "grandfather") {
-      relationParagraph.innerHTML = famRelationList.myGrandfather.join(", ");
-    } else if (categoryChoice == "parents") {
-      relationParagraph.innerHTML = famRelationList.myParents.join(", ");
-    } else if (categoryChoice == "mother") {
-      relationParagraph.innerHTML = famRelationList.appMother.join(", ");
-    } else if (categoryChoice == "father") {
-      relationParagraph.innerHTML = famRelationList.appFather.join(", ");
-    } else if (categoryChoice == "aunt") {
-      relationParagraph.innerHTML = famRelationList.myAunts.join(", ");
-    } else if (categoryChoice == "uncle") {
-      relationParagraph.innerHTML = famRelationList.myUncles.join(", ");
-    } else if (categoryChoice == "siblings") {
-      relationParagraph.innerHTML = famRelationList.mySiblings.join(", ");
-    } else if (categoryChoice == "sister") {
-      relationParagraph.innerHTML = famRelationList.mySister.join(", ");
-    } else if (categoryChoice == "brother") {
-      relationParagraph.innerHTML = famRelationList.myBrother.join(", ");
-    } else if (categoryChoice == "cousin") {
-      relationParagraph.innerHTML = famRelationList.myCousins.join(", ");
-    } else if (categoryChoice == "children") {
-      relationParagraph.innerHTML = famRelationList.myChildren.join(", ");
-    } else if (categoryChoice == "son") {
-      relationParagraph.innerHTML = famRelationList.mySon.join(", ");
-    } else if (categoryChoice == "daughter") {
-      relationParagraph.innerHTML = famRelationList.myDaughter.join(", ");
+      case "grandfather":
+        famRelationList.myGrandfather.push(newMember);
+        famRelationList.myGrandparents.push(newMember);
+        break;
+      
+      case "grandmother":
+        famRelationList.myGrandmother.push(newMember);
+        famRelationList.myGrandparents.push(newMember);
+        break;
+
+      case "sister":
+        famRelationList.mySister.push(newMember);
+        famRelationList.mySiblings.push(newMember);
+        break;
+
+      case "brother":
+        famRelationList.myBrother.push(newMember);
+        famRelationList.mySiblings.push(newMember);
+        break;
+
+      case "son":
+        famRelationList.mySon.push(newMember);
+        famRelationList.myChildren.push(newMember);
+        break;
+
+      case "daughter":
+        famRelationList.myDaughter.push(newMember);
+        famRelationList.myChildren.push(newMember);
+        break;
+
+      case "aunt":
+        famRelationList.myAunts.push(newMember);
+        break;
+
+      case "uncle":
+        famRelationList.myUncles.push(newMember);
+        break;
+
+      case "niece":
+        famRelationList.myNieces.push(newMember);
+        break;
+
+      case "nephew":
+        famRelationList.myNephews.push(newMember);
+        break;
+
+      case "cousin":
+        famRelationList.myCousins.push(newMember);
+        break;
+
+
+      default:
+        break;
+    }
+    let memberListItem = document.createElement("p");
+      memberListItem.setAttribute("class", "member-name");
+      memberListItem.innerHTML = newMember;
+      famMemberList.appendChild(memberListItem);
+      
+
+    famMember.value = "";
+}
+
+let relations;
+let relationMsg;
+
+viewRelationsBtn.onclick = function() {
+  relativeStatus = selectRelation.value;
+  relationMsg = "There are no " + relativeStatus + " entries.";
+    if (relativeStatus == "parents") {
+        relations = famRelationList.myParents;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "father") {
+      relations = famRelationList.appFather;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "mother") {
+        relations = famRelationList.appMother;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "grandparents") {
+        relations = famRelationList.myGrandparents;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "grandmother") {
+        relations = famRelationList.myGrandmother;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+
+      relationResult.innerHTML = famRelationList.myGrandmother.join(", ");
+    } else if (relativeStatus == "grandfather") {
+        relations = famRelationList.myGrandfather;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "aunt") {
+        relations = famRelationList.myAunts;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "uncle") {
+        relations = famRelationList.myUncles;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "siblings") {
+        relations = famRelationList.mySiblings;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "sister") {
+        relations = famRelationList.mySister;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "brother") {
+        relations = famRelationList.myBrother;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "children") {
+        relations = famRelationList.myChildren;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "son") {
+        relations = famRelationList.mySon;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "daughter") {
+        relations = famRelationList.myDaughter;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "niece") {
+        relations = famRelationList.myNieces;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    } else if (relativeStatus == "nephew") {
+        relations = famRelationList.myNephews;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
+    }
+    
+    else if (relativeStatus == "cousin") {
+        relations = famRelationList.myCousins;
+        if (relations == "") {
+          relationResult.innerHTML = relationMsg;
+        } else {
+          relationResult.innerHTML = relations.join(", ");
+        }
     } else {
-      relationParagraph.innerHTML = "There is no " + rlistSelect.item(famCategory).text + "."
-    }
-}
-
-function parents(value, index, array) {
-    if (value == "mother" || value == "father") {
-        famRelationList.myParents.push(members.name[index]);
-    }
-}
-
-function mothers(value, index, array) {
-    if (value == "mother") {
-        famRelationList.appMother.push(members.name[index]);
-    }
-}
-
-function fathers(value, index, array) {
-    if (value == "father") {
-        famRelationList.appFather.push(members.name[index]);
-    }
-}
-
-function grands(value, index, array) {
-    if (value == "grandmother" || value == "grandfather") {
-      famRelationList.myGrandparents.push(members.name[index]);
-    }
-}
-
-function grandfathers(value, index, array) {
-    if (value == "grandfather") {
-        famRelationList.myGrandfather.push(members.name[index]);
-    }
-}
-
-function grandmothers(value, index, array) {
-    if (value == "grandmother") {
-        famRelationList.myGrandmother.push(members.name[index]);
-    }
-}
-
-function aunts(value, index, array) {
-    if (value == "aunt") {
-        famRelationList.myAunts.push(members.name[index]);
-    }
-}
-
-function uncles(value, index, array) {
-    if (value == "uncle") {
-        famRelationList.myUncles.push(members.name[index]);
-    }
-}
-
-function siblings(value, index, array) {
-    if (value == "brother" || value == "sister") {
-        famRelationList.mySiblings.push(members.name[index]);
-    }
-}
-
-function sisters(value, index, array) {
-    if (value == "sister") {
-        famRelationList.mySister.push(members.name[index]);
-    }
-}
-
-function brothers(value, index, array) {
-    if (value == "brother") {
-        famRelationList.myBrother.push(members.name[index]);
-    }
-}
-
-function children(value, index, array) {
-    if (value == "son" || value == "daughter") {
-        famRelationList.myChildren.push(members.name[index]);
-    }
-}
-
-function sons(value, index, array) {
-  if (value == "son") {
-    famRelationList.mySon.push(members.name[index]);
-  }
-}
-
-function daughters(value, index, array) {
-if (value == "daughter") {
-    famRelationList.myDaughter.push(members.name[index]);
-  }
-}
-
-function counsins(value, index, array) {
-    if (value == "cousin") {
-        famRelationList.myCousins.push(members.name[index]);
+        relationResult.innerHTML = relationMsg;
     }
 }
 
@@ -277,6 +268,51 @@ function counsins(value, index, array) {
 
 
 //#region JS PRACTICE
+
+//SWITCH
+let colorSelection = document.querySelector("#switchy-select");
+let switchyColor = colorSelection.querySelectorAll("option");
+let switchySquare = document.querySelector(".switchy-square");
+
+colorSelection.onchange = function() {
+switch (colorSelection.value) {
+  case "green":
+      switchySquare.style.backgroundColor = "green";
+      switchySquare.style.color = "white";
+    break;
+
+  case "red":
+    switchySquare.style.backgroundColor = "red";
+    switchySquare.style.color = "yellow";
+    break;
+
+  case "yellow":
+    switchySquare.style.backgroundColor = "yellow";
+    switchySquare.style.color = "red";
+    break;
+
+  case "blue":
+    switchySquare.style.backgroundColor = "blue";
+    switchySquare.style.color = "white";
+    break;
+
+  case "orange":
+    switchySquare.style.backgroundColor = "orange";
+    switchySquare.style.color = "white";
+    break;
+
+  case "purple":
+      switchySquare.style.backgroundColor = "purple";
+      switchySquare.style.color = "white";
+    break;
+
+
+  default:
+    switchySquare.style.backgroundColor = "white";
+    switchySquare.style.color = "black";
+    break;
+}
+}
 
 let myFamily = ["Anna", "Mildred", "Regina", "Tammy", "Nathaniel", "Natters", "Maurice", "Corrie"];
 
@@ -299,7 +335,7 @@ function makeList(arr) {
 }
 
 const jsTest1 = document.getElementsByClassName("js-test1")[0]
-const nextLesson = "02-15 Selecting An Element" 
+const nextLesson = "02-17 Listening to Events" 
 const testComment = "Click me to see the next lesson."
 
 //PAGE FUNCTIONS - DO NOT DELETE
@@ -339,6 +375,41 @@ console.log("Im going to type in the console")
 
 //#endregion
 
-//THE BOM AND THE DOM
+//#region PALINDROME
+//Palindrome App
+let palappInput = document.querySelector("#pa-word-input");
+let palappWord;
+let checkWord = [];
+let palappBackward;
+let word2;
+let palappMatch = document.querySelector("#palindrome-result");
+
+function wordChecked() {
+  palappWord = palappInput.value.toLowerCase();
+  checkWord.push(palappWord);
+  palappBackward = checkWord[0].valueOf().split('').reverse().join('');
+  word2 = palappBackward;
+
+  if (Boolean(palappWord == palappBackward) == true) {
+    palappMatch.innerHTML = palappWord.toUpperCase() + " is a palindrome!";
+  } else {
+    palappMatch.innerHTML = palappWord.toUpperCase() + " is not a palindrome.";
+  }
+
+  checkWord = [];
+  
+}
 
 
+//Console Practice
+let dromeString = ["Anna", "Otto", "south", "noon", "cat", "Racecar", "game", "eye"];
+let reverseString = [];
+let wordReversed = "";
+
+function reverseWord(value, index, array) {
+    wordReversed = dromeString[index].valueOf().toLowerCase().split('').reverse().join('');
+    reverseString.push(wordReversed);
+}
+
+
+//#endregion

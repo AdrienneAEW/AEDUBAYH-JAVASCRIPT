@@ -1,3 +1,4 @@
+/*#region GLOBAL */
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -78,6 +79,35 @@ button {
   margin-right: auto;
 }
 
+label {
+  font-weight: 600;
+}
+
+.left-48 {
+  margin-left: 48px;
+}
+
+/*#endregion*/
+/*#region SWITCHY */
+.switchy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.switchy .switchy-form, .switchy .switchy-square {
+  width: 40%;
+  padding: 1em;
+}
+
+/*#endregion*/
+/*#region PALINDROME */
+/*#endregion*/
+/*#region PATTERNS - REGEX */
+/*#endregion*/
 /* FAMILY APP */
 #family-app-form {
   width: 90%;

@@ -1,3 +1,4 @@
+/*#region GLOBAL */
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -77,6 +78,36 @@ button {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+label {
+	font-weight: 600;
+}
+
+.left-48 {
+	margin-left: 48px;;
+}
+/*#endregion*/
+
+/*#region SWITCHY */
+.switchy {
+	display: flex;
+	justify-content: center;
+
+	.switchy-form, .switchy-square {
+		width: 40%;
+		padding: 1em;
+	}
+}
+/*#endregion*/
+
+
+/*#region PALINDROME */
+
+/*#endregion*/
+
+/*#region PATTERNS - REGEX */
+
+/*#endregion*/
 
 /* FAMILY APP */
 #family-app-form {
