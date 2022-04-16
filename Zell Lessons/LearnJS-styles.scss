@@ -1,3 +1,8 @@
+/*#region VARIABLES */
+$heading-font: 'EB Garamond', cursive;
+$blue: navy;
+/*#endregion*/
+
 /*#region GLOBAL */
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -13,17 +18,17 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'EB Garamond', cursive;
+	font-family: $heading-font;
 	padding: 8px 0 8px 15px;
 }
 
 h1 {
 	font-size: 2.5em;
-	color: navy;
-	-webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
+	color: $blue;
+}
+
+div ~ h1 {
+	margin-top: 36px;
 }
 
 .paragraph-h1 {
@@ -86,6 +91,156 @@ label {
 .left-48 {
 	margin-left: 48px;;
 }
+
+
+/*#endregion*/
+
+
+/* #region INPUT VALUES */
+.value-practice {
+	width: 45%;
+	padding: 1.75rem;
+	border: 2px solid;
+	margin-left: auto;
+	margin-right: auto;
+
+	label {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	input {
+		width: 100%;
+		padding: 8px;
+		margin-bottom: 1.1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+/* #endregion */
+
+
+
+/*#region INTERACTIVITY JS */
+#calculator-container {
+	width: 50%;
+	margin: 0 auto;
+    padding: 28px;
+    border: 1px solid;
+    border-radius: 35px;
+
+	input {
+		padding: 8px 12px;
+		width: 54.5%;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+}
+
+.display-content {
+	display: flex;
+}
+
+.calculator-content {
+	display: grid;
+	grid-template-columns: 60% 20%;
+	grid-template-rows: 1fr;
+}
+
+#numerators {
+	display: grid;
+	grid-template-columns: 30% 30% 30%;
+	grid-template-rows: 1fr;
+}
+
+#operators {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr;
+}
+
+#numerators, #operators {
+	grid-gap: 5px;
+
+	li {
+		text-align: center;
+    	padding: 12px;
+    	border: 1px solid;
+	}
+
+}
+/* #endregion */
+
+#test-animae {
+	background-color: lemonchiffon;
+	padding: 24px 48px;
+	animation-name: animaeBack;
+	animation-duration: 5s;
+
+
+	ul {
+		animation-name: animae;
+		animation-duration: 5s;
+		animation-delay: 4.5s;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: backwards;
+	}
+}
+
+
+@keyframes animae {
+	0% {opacity: 0;}
+	25% {opacity: .25;}
+	50% {opacity: .5;}
+	75% {opacity: .75;}
+	100% {opacity: 1;}
+}
+
+@keyframes animaeBack {
+	0% {width: 0;}
+	25% {width: 25%;}
+	50% {width: 50%;}
+	75% {width: 75%;}
+	100% {width: 100%;}
+}
+
+/*#region CALCULATOR APP */
+#calculator {
+	padding: 1em;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid;
+
+	.calc-value {
+		width: 100%;
+		padding: 5px;
+	}
+}
+
+#calculator-content {
+	display: grid;
+	grid-template-columns: 80% 20%;
+	grid-template-rows: 1fr;
+}
+
+.numbers-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+/*#endregion*/
+
+/*#region SUBSCRIPTION APP*/
+
 /*#endregion*/
 
 /*#region SWITCHY */
@@ -100,7 +255,6 @@ label {
 }
 /*#endregion*/
 
-
 /*#region PALINDROME */
 
 /*#endregion*/
@@ -109,7 +263,7 @@ label {
 
 /*#endregion*/
 
-/* FAMILY APP */
+/*#region FAMILY APP */
 #family-app-form {
 	width: 90%;
 	@extend .center-content;
@@ -146,3 +300,5 @@ label {
 	
 	width: 35%;
 }
+
+/*#endregion*/

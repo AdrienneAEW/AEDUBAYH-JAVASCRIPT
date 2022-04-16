@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="LearnJS-styles.css">
+    <link rel="icon" href="https://adrienneaew.me/wp-content/uploads/2017/02/cropped-AEWLogo-SB.png" type="image/gif" sizes="16x16">
+    <title>Interactivity With JS</title>
+</head>
+<body>
+<main>
+    <h1>Calculator - FreeCode Camp Assignment</h1>
+    
+    <section id="calculator-container">
+        <p id="calc-total" style="text-align: right; width: 75%;  margin: 0 0 0.5rem;"></p>
+            
+        <div class="display-content">
+            <button type="button" id="clear" title="clear all" tabindex="0">AC</button>
+            <input type="text" id="display" value="" tabindex="1"/>
+            <button type="reset" id="reset" title="delete input" tabindex="2">Reset</button>
+        </div>
+        <div class="calculator-content">
+            <ul id="numerators">
+                <li id="nine" class="number-input" tabindex="0">9</li>
+                <li id="eight" class="number-input" tabindex="0">8</li>
+                <li id="seven" class="number-input" tabindex="0">7</li>
+                <li id="six" class="number-input" tabindex="0">6</li>
+                <li id="five" class="number-input" tabindex="0">5</li>
+                <li id="four" class="number-input"  tabindex="0">4</li>
+                <li id="three" class="number-input" tabindex="0">3</li>
+                <li id="two" class="number-input" tabindex="0">2</li>
+                <li id="one" class="number-input" tabindex="0">1</li>
+                <li id="zero" class="number-input" tabindex="5">0</li>
+                <li id="decimal" class="number-input" tabindex="4">&period;</li>
+                <li id="equal" class="operator-input" tabindex="3">&equals;</li>
+                
+            </ul>
+            <ul id="operators">
+                <li id="add" class="operator-input" tabindex="0">&plus;</li>
+                <li id="subtract" class="operator-input" tabindex="0">&minus;</li>
+                <li id="multiply" class="operator-input" tabindex="0">&times;</li>
+                <li id="divide" class="operator-input" tabindex="0">&divide;</li>
+            </ul>
+        </div>
+
+    
+    </section>
+
+</main>
+<script src="InteractivityJS.js"></script>
+</body>
+</html>

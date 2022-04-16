@@ -1,7 +1,8 @@
+/*#region VARIABLES */
+/*#endregion*/
 /*#region GLOBAL */
 *, *::before, *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -9,22 +10,22 @@ html {
 }
 
 body {
-  font-family: 'Roboto', san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'EB Garamond', cursive;
+  font-family: "EB Garamond", cursive;
   padding: 8px 0 8px 15px;
 }
 
 h1 {
   font-size: 2.5em;
   color: navy;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
+}
+
+div ~ h1 {
+  margin-top: 36px;
 }
 
 .paragraph-h1 {
@@ -88,16 +89,200 @@ label {
 }
 
 /*#endregion*/
-/*#region SWITCHY */
-.switchy {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+/* #region INPUT VALUES */
+.value-practice {
+  width: 45%;
+  padding: 1.75rem;
+  border: 2px solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+.value-practice label {
+  display: block;
+  margin-bottom: 5px;
+}
+.value-practice input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 1.1rem;
+}
+.value-practice input:last-child {
+  margin-bottom: 0;
 }
 
+/* #endregion */
+/*#region INTERACTIVITY JS */
+#calculator-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid;
+  border-radius: 35px;
+}
+#calculator-container input {
+  padding: 8px 12px;
+  width: 54.5%;
+}
+#calculator-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.display-content {
+  display: flex;
+}
+
+.calculator-content {
+  display: grid;
+  grid-template-columns: 60% 20%;
+  grid-template-rows: 1fr;
+}
+
+#numerators {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 1fr;
+}
+
+#operators {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr;
+}
+
+#numerators, #operators {
+  grid-gap: 5px;
+}
+#numerators li, #operators li {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid;
+}
+
+/* #endregion */
+#test-animae {
+  background-color: lemonchiffon;
+  padding: 24px 48px;
+  -webkit-animation-name: animaeBack;
+          animation-name: animaeBack;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+#test-animae ul {
+  -webkit-animation-name: animae;
+          animation-name: animae;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes animae {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animae {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animaeBack {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes animaeBack {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/*#region CALCULATOR APP */
+#calculator {
+  padding: 1em;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid;
+}
+#calculator .calc-value {
+  width: 100%;
+  padding: 5px;
+}
+
+#calculator-content {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr;
+}
+
+.numbers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/*#endregion*/
+/*#region SUBSCRIPTION APP*/
+/*#endregion*/
+/*#region SWITCHY */
+.switchy {
+  display: flex;
+  justify-content: center;
+}
 .switchy .switchy-form, .switchy .switchy-square {
   width: 40%;
   padding: 1em;
@@ -108,13 +293,12 @@ label {
 /*#endregion*/
 /*#region PATTERNS - REGEX */
 /*#endregion*/
-/* FAMILY APP */
+/*#region FAMILY APP */
 #family-app-form {
   width: 90%;
   border: 2px solid olivedrab;
   padding: 28px;
 }
-
 #family-app-form input[type=text], #family-app-form select {
   width: 100%;
   padding: 5px 12px;
@@ -123,11 +307,8 @@ label {
 }
 
 #family-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 #family-list p {
   margin-left: 75px;
 }
@@ -140,9 +321,9 @@ label {
 #related-family {
   width: 35%;
 }
-
 #related-family h3 {
   margin-left: 0;
   padding: 0;
 }
-/*# sourceMappingURL=LearnJS-styles.css.map */
+
+/*#endregion*//*# sourceMappingURL=LearnJS-styles.css.map */

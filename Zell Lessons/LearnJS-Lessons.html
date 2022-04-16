@@ -10,54 +10,172 @@
 </head>
 <body>
 <main>
-<h1>Go Live Adrienne - Go Live Girl</h1>
-
 <p class="paragraph-h1 js-test1" onclick="swapText()" style="cursor: help;">Click me to see the next lesson.</p>
 <p class="paragraph-h1 js-test2"></p>
+
+<h1>Go Live Adrienne - Go Live Girl</h1>
+<div><p class="paragraph-h1">Some text to space things out.</p></div>
+
+<h1>Input Value Practice</h1>
+<form action="" class="value-practice">
+    <label for="tu-input">Tester ID</label>
+    <input type="text" name="tu-input" id="tu-input">
+    <label for="device-input">Device Address</label>
+    <input type="text" name="device-input" id="device-input">
+    <label for="url-input">URL Address</label>
+    <input type="text" name="url-input" id="url-input">
+    <label for="browser-input">Browser</label>
+    <input type="text" name="browser-input" id="browser-input">
+    <button type="button" id="count-btn">Count</button>
+    
+</form>
+
+<h1>Med Tracker App Test</h1>
+<div id="med-tracker-app">
+    <form id="med-inventory-form">
+        <label for="med-refilled">Refilled:</label>
+        <input type="date" name="med-refilled" id="med-refilled">
+        <label for="med-quantity">Quantity:</label>
+        <input type="number" name="med-quantity" id="med-quantity">
+        <label for="med-taken">Taken:</label>
+        <input type="number" name="med-taken" id="med-taken">
+        <label for="med-inventory">Remaining:</label>
+        <input type="number" name="med-inventory" id="med-inventory">
+        <input type="button" value="Update">
+    </form>
+
+    <table id="med-tracker-table">
+        <caption>Med Taken</caption>
+        
+        <thead>
+            <th>Date</th>
+            <th>Amount</th>
+        </thead>
+        <tbody id="med-taken-container">
+            <tr>
+                <td><input type="date" name="taken-date"></td>
+                <td><input type="number" name="taken-count"></td>
+            </tr>
+            <tr>
+                <td><input type="date" name="taken-date"></td>
+                <td><input type="number" name="taken-count"></td>
+            </tr>
+            <tr>
+                <td><input type="date" name="taken-date"></td>
+                <td><input type="number" name="taken-count"></td>
+            </tr>
+            <tr>
+                <td><input type="date" name="taken-date"></td>
+                <td><input type="number" name="taken-count"></td>
+            </tr>
+            <tr>
+                <td><input type="date" name="taken-date"></td>
+                <td><input type="number" name="taken-count"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<h1>Trying Animation Here</h1>
+<p class="paragraph-h1">The text should fade in last...</p>
+<div id="test-animae">
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+</div>
+
+
+
+<h1>Today We Filter</h1>
+<form id="test-filter-form" class="paragraph-h1">
+<h2>Filter By:</h2>
+
+<select name="category" id="test-filter-category">
+    <option value="furniture">Furniture</option>
+    <option value="wall-decor">Wall Decor</option>
+</select>
+<select name="subcategory" id="test-filter-subcategory">
+    <option value="paintings">Paintings</option>
+    <option value="photographs">Photographs</option>
+    <option value="seating">Seating</option>
+    <option value="tables">Tables</option>
+</select>
+</form>
+<div id="test-filter" class="left-48">
+    
+</div>
+<h1>Calculator</h1>
+<div id="calculator">
+    <input type="text" id="total" class="calc-value"/>
+    <input type="text" id="display" class="calc-value"/>
+    <div id="calculator-content">
+        <div class="numbers-container">
+            <p id="1" class="calc-btn calc-number">1</p>
+            <p id="2" class="calc-btn calc-number">2</p>
+            <p id="3" class="calc-btn calc-number">3</p>
+            <p id="4" class="calc-btn calc-number">4</p>
+            <p id="5" class="calc-btn calc-number">5</p>
+            <p id="6" class="calc-btn calc-number">6</p>
+            <p id="7" class="calc-btn calc-number">7</p>
+            <p id="8" class="calc-btn calc-number">8</p>
+            <p id="9" class="calc-btn calc-number">9</p>
+            <p id="0" class="calc-btn calc-number">0</p>
+            <p id="decimal" class="calc-btn calc-indicator">.</p>
+            <p id="clear" class="calc-btn calc-indicator" data-action="clear" title="Clear Input" aria-label="Clear Input">AC</p>
+        </div>
+        <div class="calculator-indicators-container">
+            <p id="add" class="calc-btn calc-indicator" data-action="add">+</p>
+            <p id="subtract" class="calc-btn calc-indicator" data-action="sbustract">-</p>
+            <p id="multiply" class="calc-btn calc-indicator" data-action="multiply">&times;</p>
+            <p id="divide" class="calc-btn calc-indicator" data-action="divide">÷</p>
+            <p id="equal" class="calc-btn calc-indicator" data-action="calculate">=</p>            
+        </div>
+    </div>
+</div>
+
+<h1>Object Looping</h1>
+<div id="quote-machine"></div>
 
 <h1>Subscription App</h1>
 <div id="subscription-app">
     <form id="subscription-app-form">
-        <label for="subscription-name">Name&Backslash;Title</label>
+        <label for="subscription-name">Subscription</label>
         <input type="text" id="subscription-name" />
+        <label for="subscription-site">Website</label>
+        <input type="url" id="subscription-site" />
+        <label for="subscription-category">Category</label>
+        <select id="subscription-category">
+            <option value="N/A" selected></option>
+        </select>
         <label for="subscription-description">Description</label>
         <input type="text" id="subscription-description" />
-        <label for="subscription-category">Category</label>
-        <input type="text" id="subscription-category" />
-        <label for="subscription-site">Website</label>
-        <input type="text" id="subscription-site" />
-        <label for="subscription-term">Term</label>
-        <input type="text" id="subscription-term" />
         <label for="subscription-cycle">Cycle</label>
-        <input type="text" id="subscription-cycle" />
-        <label for="subscription-cost">Cost</label>
-        <input type="text" id="subscription-cost" />
-        <label for="subscription-invoiced">Last Invoiced</label>
-        <input type="date" id="subscription-invoiced" />
+        <select id="subscription-cycle">
+            <option value="N/A" selected></option>
+        </select>
         <label for="subscription-start">Start Date</label>
         <input type="date" id="subscription-start" />
         <label for="subscription-end">End Date</label>
         <input type="text" id="subscription-end" />
+        <label for="subscription-cost">Cost</label>
+        <input type="text" id="subscription-cost" />
+        <label for="subscription-invoiced">Last Invoiced</label>
+        <input type="date" id="subscription-invoiced" />
         <label for="subscription-reminder">Reminders</label>
-        <input type="text" id="subscription-reminder" />        
+        <input type="date" id="subscription-reminder" />
+        <input type="submit" id="sub-submit-btn" class="btn" value="Add" title="Add Subscription"/>
     </form>
+    <section id="subscription-cards">
+        
+    </section>
     <table id="subscription-list">
-        <caption>Subscriptions</caption>
+        <caption>Subscriptions Data</caption>
         <thead>
-            <tr>
-                <th>Subscription</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Website</th>
-                <th>Term</th>
-                <th>Cycle</th>
-                <th>Cost</th>
-                <th>Last Invoice</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Reminders</th>
-            </tr>
+            <tr id="subscription-headings"></tr>
         </thead>
+        <tbody id="list-container"></tbody>
         <tfoot>I'm the table footer. Last Updated info here.</tfoot>
     </table>
 </div>
